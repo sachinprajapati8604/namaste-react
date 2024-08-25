@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
 // Simple creating element 
 const parent2 = React.createElement(
     "div",
@@ -9,7 +12,7 @@ const parent2 = React.createElement(
 const parent = React.createElement(
     "div",
     { id: "parent" },
-    React.createElement("h1", { id: "heading" }, "I am heading ")
+    React.createElement("h1", { id: "heading" }, "I am heading from create react element ")
 );
 
 const parent3 = React.createElement(
@@ -17,7 +20,7 @@ const parent3 = React.createElement(
     { id: "parent3", class: "parent3", "data-ab": "mydata" },
     React.createElement("div", { id: "row" }, React.createElement("div", { id: "col" }), React.createElement("p", { id: "text" }, 'I am paragram inside row>col>p')));
 
-console.log(parent) // it is an object
+// console.log(parent) // it is an object
 // Rendering inside root with React DOM
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render([parent, parent2, parent3]);
