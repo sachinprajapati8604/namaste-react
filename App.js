@@ -1,28 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-// Simple creating element 
-const parent2 = React.createElement(
-    "div",
-    { class: "parent2" },
-    "This is from 2nd div"
-);
+const element = <span className="span">Hi I am an element n JSX</span>;
 
-//Nested
-const parent = React.createElement(
-    "div",
-    { id: "parent" },
-    React.createElement("h1", { id: "heading" }, "I am heading from create react element ")
-);
+const Title = () => {
+    return <h1 tabIndex={1} className="title">Namstey React {element}</h1>;
+};
 
-const parent3 = React.createElement(
-    "div",
-    { id: "parent3", class: "parent3", "data-ab": "mydata" },
-    React.createElement("div", { id: "row" }, React.createElement("div", { id: "col" }), React.createElement("p", { id: "text" }, 'I am paragram inside row>col>p')));
+const HeadingComponent = () => {
+    return (
+        <div id="container">
+            <Title />
+            <h1>This is React Compoent </h1>
+        </div>
+    );
+};
 
-// console.log(parent) // it is an object
-// Rendering inside root with React DOM
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render([parent, parent2, parent3]);
-// if have one node we can simply use like below
-// root.render(parent);
+
+root.render(<HeadingComponent />);
